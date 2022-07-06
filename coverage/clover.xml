@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1657120038850" clover="3.2.0">
+  <project timestamp="1657120038850" name="All files">
+    <metrics statements="62" coveredstatements="62" conditionals="19" coveredconditionals="19" methods="15" coveredmethods="15" elements="96" coveredelements="96" complexity="0" loc="62" ncloc="62" packages="5" files="9" classes="9"/>
+    <package name="Aplications.use_case">
+      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="AddUserUseCase.ts" path="/Users/darmayasa/dev/Projects/ts-restfull-hapi/src/Aplications/use_case/AddUserUseCase.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="Commons.exceptions">
+      <metrics statements="16" coveredstatements="16" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="4"/>
+      <file name="AuthenticationError.ts" path="/Users/darmayasa/dev/Projects/ts-restfull-hapi/src/Commons/exceptions/AuthenticationError.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+      <file name="ClientError.ts" path="/Users/darmayasa/dev/Projects/ts-restfull-hapi/src/Commons/exceptions/ClientError.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+      </file>
+      <file name="InvariantError.ts" path="/Users/darmayasa/dev/Projects/ts-restfull-hapi/src/Commons/exceptions/InvariantError.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+      </file>
+      <file name="NotFoundError.ts" path="/Users/darmayasa/dev/Projects/ts-restfull-hapi/src/Commons/exceptions/NotFoundError.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="Domains.users.entities">
+      <metrics statements="20" coveredstatements="20" conditionals="16" coveredconditionals="16" methods="4" coveredmethods="4"/>
+      <file name="RegisterUser.ts" path="/Users/darmayasa/dev/Projects/ts-restfull-hapi/src/Domains/users/entities/RegisterUser.ts">
+        <metrics statements="10" coveredstatements="10" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="15" count="7" type="stmt"/>
+        <line num="20" count="5" type="stmt"/>
+        <line num="21" count="5" type="stmt"/>
+        <line num="22" count="5" type="stmt"/>
+        <line num="23" count="5" type="stmt"/>
+        <line num="27" count="7" type="cond" truecount="4" falsecount="0"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="30" count="6" type="cond" truecount="4" falsecount="0"/>
+        <line num="31" count="1" type="stmt"/>
+      </file>
+      <file name="RegisteredUser.ts" path="/Users/darmayasa/dev/Projects/ts-restfull-hapi/src/Domains/users/entities/RegisteredUser.ts">
+        <metrics statements="10" coveredstatements="10" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="15" count="7" type="stmt"/>
+        <line num="16" count="5" type="stmt"/>
+        <line num="17" count="5" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
+        <line num="19" count="5" type="stmt"/>
+        <line num="27" count="7" type="cond" truecount="4" falsecount="0"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="30" count="6" type="cond" truecount="4" falsecount="0"/>
+        <line num="31" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="Infrastructures.repository">
+      <metrics statements="14" coveredstatements="14" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="3"/>
+      <file name="UserRepositoryPostgres.ts" path="/Users/darmayasa/dev/Projects/ts-restfull-hapi/src/Infrastructures/repository/UserRepositoryPostgres.ts">
+        <metrics statements="14" coveredstatements="14" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="3"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="27" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="46" count="2" type="stmt"/>
+        <line num="47" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="Infrastructures.security">
+      <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+      <file name="BcryptPasswordHash.ts" path="/Users/darmayasa/dev/Projects/ts-restfull-hapi/src/Infrastructures/security/BcryptPasswordHash.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

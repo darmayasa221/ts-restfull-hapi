@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
-import RegisteredUser from './entities/RegisteredUser';
-import RegisterUser from './entities/RegisterUser';
+import { IRegisteredUser } from './entities/RegisteredUser';
+import { IRegisterUser } from './entities/RegisterUser';
 
-export interface UserRepository {
-  addUser(registerUser: RegisterUser): Promise<RegisteredUser>
-  verifyAvailableUsername(username: string): Promise<void>
+export default abstract class UserRepository {
+  abstract addUser(registerUser: IRegisterUser): Promise<IRegisteredUser>
+
+  abstract verifyAvailableUsername(username: string): Promise<void>
 }

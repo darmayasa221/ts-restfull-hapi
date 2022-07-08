@@ -1,23 +1,25 @@
 import { Pool, QueryResult } from 'pg';
+import { Generator } from '../../Aplications/generator/Generator';
 import InvariantError from '../../Commons/exceptions/InvariantError';
 import { Query } from '../../Commons/helper/database/query';
-import RegisteredUser, { UserRegistered } from '../../Domains/users/entities/RegisteredUser';
-import RegisterUser from '../../Domains/users/entities/RegisterUser';
-import { UserRepository } from '../../Domains/users/UserRepository';
+import RegisteredUser, { IRegisteredUser } from '../../Domains/users/entities/RegisteredUser';
+import { IRegisterUser } from '../../Domains/users/entities/RegisterUser';
+import UserRepository from '../../Domains/users/UserRepository';
 
-export default class UserRepositoryPostgres implements UserRepository {
+export default class UserRepositoryPostgres extends UserRepository {
   private pool: Pool;
 
-  private idGenerator: Function;
+  private idGenerator: Generator;
 
-  constructor(pool: Pool, idGenerator: Function) {
+  constructor(pool: Pool, idGenerator: Generator) {
+    super();
     this.pool = pool;
     this.idGenerator = idGenerator;
   }
 
   async verifyAvailableUsername(username: string): Promise<void> {
     const query: Query<string> = {
-      text: `SELECT username 
+      text: `SELECT username
       FROM users
       WHERE username = $1`,
       values: [username],
@@ -29,7 +31,7 @@ export default class UserRepositoryPostgres implements UserRepository {
     }
   }
 
-  async addUser(registerUser: RegisterUser): Promise<RegisteredUser> {
+  async addUser(registerUser: IRegisterUser): Promise<IRegisteredUser> {
     const {
       username,
       password,
@@ -43,7 +45,7 @@ export default class UserRepositoryPostgres implements UserRepository {
       values: [id, username, password, fullname],
     };
 
-    const { rows }:QueryResult<UserRegistered> = await this.pool.query(query);
+    const { rows }:QueryResult<IRegisteredUser> = await this.pool.query(query);
     return new RegisteredUser({ ...rows[0] });
   }
 }

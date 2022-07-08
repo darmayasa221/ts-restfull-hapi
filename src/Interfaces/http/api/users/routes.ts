@@ -1,7 +1,6 @@
-interface Users {
-    postUserHandler:Function
-}
-const routes = (handler: Users) => ([
+import UsersHandler from './handler';
+
+const routes = (handler: UsersHandler) => ([
   {
     method: 'POST',
     path: '/users',

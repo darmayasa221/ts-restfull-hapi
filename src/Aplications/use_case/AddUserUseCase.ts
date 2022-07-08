@@ -1,7 +1,7 @@
-import RegisteredUser from '../../Domains/users/entities/RegisteredUser';
-import RegisterUser, { UserRegister } from '../../Domains/users/entities/RegisterUser';
-import { UserRepository } from '../../Domains/users/UserRepository';
-import { PasswordHash } from '../security/PasswordHash';
+import { IRegisteredUser } from '../../Domains/users/entities/RegisteredUser';
+import RegisterUser, { IRegisterUser } from '../../Domains/users/entities/RegisterUser';
+import UserRepository from '../../Domains/users/UserRepository';
+import PasswordHash from '../security/PasswordHash';
 
 interface IAddUserUseCase {
   userRepository: UserRepository
@@ -18,7 +18,7 @@ export default class AddUserUseCase {
     this.passwordHash = passwordHash;
   }
 
-  async execute(useCasePayload:UserRegister): Promise<RegisteredUser> {
+  async execute(useCasePayload:IRegisterUser): Promise<IRegisteredUser> {
     const registerUser = new RegisterUser(useCasePayload);
     await this.userRepository.verifyAvailableUsername(registerUser.username);
     registerUser.password = await this.passwordHash.hash(registerUser.password);

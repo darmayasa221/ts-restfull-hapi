@@ -1,4 +1,4 @@
 /* eslint-disable no-unused-vars */
-export interface PasswordHash {
-  hash(password: string) : Promise<string>
+export default abstract class PasswordHash {
+  abstract hash(password: string) : Promise<string>
 }

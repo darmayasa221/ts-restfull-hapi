@@ -1,4 +1,4 @@
-export interface UserRegister {
+export interface IRegisterUser {
   username: string;
   password: string;
   fullname: string
@@ -11,7 +11,7 @@ export default class RegisterUser {
 
   public fullname: string;
 
-  constructor(payload: UserRegister) {
+  constructor(payload: IRegisterUser) {
     this.verifyPayload(payload);
     const {
       username,
@@ -23,7 +23,7 @@ export default class RegisterUser {
     this.fullname = fullname;
   }
 
-  private verifyPayload({ username, password, fullname }: UserRegister): void {
+  private verifyPayload({ username, password, fullname }: IRegisterUser): void {
     if (!username || !password || !fullname) {
       throw new Error('REGISTER_USER.NOT_CONTAIN_NEEDED_PROPERTY');
     }

@@ -1,4 +1,4 @@
-export interface UserRegistered {
+export interface IRegisteredUser {
   id: string;
   username: string;
   fullname: string;
@@ -11,7 +11,7 @@ export default class RegisteredUser {
 
   public fullname: string;
 
-  constructor(payload: UserRegistered) {
+  constructor(payload: IRegisteredUser) {
     this.verifyPaylod(payload);
     const { id, username, fullname } = payload;
     this.id = id;
@@ -23,7 +23,7 @@ export default class RegisteredUser {
     id,
     username,
     fullname,
-  }: UserRegistered) {
+  }: IRegisteredUser) {
     if (!id || !username || !fullname) {
       throw new Error('REGISTERED_USER.NOT_CONTAIN_NEEDED_PROPERTY');
     }

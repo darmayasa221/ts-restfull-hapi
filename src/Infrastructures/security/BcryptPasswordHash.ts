@@ -1,20 +1,18 @@
-/* eslint-disable no-unused-vars */
-import { PasswordHash } from '../../Aplications/security/PasswordHash';
+import { hash } from 'bcrypt';
+import PasswordHash from '../../Aplications/security/PasswordHash';
 
-interface Bcrypt {
-  hash: (password:string, saltRound:number) => Promise<string>
-}
-export default class BcryptPasswordHash implements PasswordHash {
-  private bcrypt: Bcrypt;
+export default class BcryptPasswordHash extends PasswordHash {
+  private bcrypt: typeof hash;
 
   private saltRound: number;
 
-  constructor(bcrypt: Bcrypt, saltRound = 10) {
+  constructor(bcrypt: typeof hash, saltRound = 10) {
+    super();
     this.bcrypt = bcrypt;
     this.saltRound = saltRound;
   }
 
   async hash(password: string): Promise<string> {
-    return this.bcrypt.hash(password, this.saltRound);
+    return this.bcrypt(password, this.saltRound);
   }
 }
